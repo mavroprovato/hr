@@ -1,6 +1,6 @@
 package net.marvoprovato.hr.services
 
-import net.marvoprovato.hr.Employee
+import net.marvoprovato.hr.models.Employee
 import org.springframework.jdbc.core.JdbcTemplate
 import org.springframework.stereotype.Service
 import org.springframework.jdbc.core.query

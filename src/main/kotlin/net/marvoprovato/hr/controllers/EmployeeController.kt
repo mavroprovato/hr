@@ -1,6 +1,6 @@
 package net.marvoprovato.hr.controllers
 
-import net.marvoprovato.hr.Employee
+import net.marvoprovato.hr.models.Employee
 import net.marvoprovato.hr.services.EmployeeService
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.GetMapping
