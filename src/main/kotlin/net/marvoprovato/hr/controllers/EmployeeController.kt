@@ -1,16 +1,13 @@
 package net.marvoprovato.hr.controllers
 
-import net.marvoprovato.hr.Employee
+import net.marvoprovato.hr.services.EmployeeService
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
 
 @RestController
 @RequestMapping("/employees")
-class EmployeeController {
+class EmployeeController(private val service: EmployeeService) {
     @GetMapping
-    fun list() = listOf(
-        Employee(1, "John", "Doe"),
-        Employee(2, "Jane", "Doe")
-    )
+    fun listEmployees() = service.find()
 }
