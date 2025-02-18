@@ -1,11 +1,6 @@
 package net.marvoprovato.hr.entites
 
-import jakarta.persistence.Entity
-import jakarta.persistence.Enumerated
-import jakarta.persistence.EnumType
-import jakarta.persistence.GeneratedValue
-import jakarta.persistence.Id
-import jakarta.persistence.Table
+import jakarta.persistence.*
 import java.time.LocalDate
 
 @Entity
@@ -15,6 +10,7 @@ class Employee(
     var lastName: String,
     var birthDate: LocalDate,
     var hireDate: LocalDate,
+    @ManyToOne var jobTitle: JobTitle,
     @Enumerated(EnumType.STRING) var gender: Gender?,
     @Id @GeneratedValue var id: Long? = null
 )
