@@ -6,11 +6,12 @@ import java.time.LocalDate
 @Entity
 @Table(name = "employees")
 class Employee(
-    var firstName: String,
-    var lastName: String,
-    var birthDate: LocalDate,
-    var hireDate: LocalDate,
-    @ManyToOne var jobTitle: JobTitle,
-    @Enumerated(EnumType.STRING) var gender: Gender?,
+    @Column(nullable = false) var firstName: String,
+    @Column(nullable = false) var lastName: String,
+    @Column(nullable = false) var birthDate: LocalDate,
+    @Column(nullable = false) var hireDate: LocalDate,
+    @Column(nullable = false) @Enumerated(EnumType.STRING) var gender: Gender = Gender.NA,
+    @ManyToOne(optional = false) var department: Department,
+    @ManyToOne(optional = false) var jobTitle: JobTitle,
     @Id @GeneratedValue var id: Long? = null
 )
