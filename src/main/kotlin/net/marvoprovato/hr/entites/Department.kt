@@ -6,5 +6,5 @@ import jakarta.persistence.*
 @Table(name = "departments")
 class Department(
     @Column(unique = true, nullable = false) var name: String,
-    @Id @GeneratedValue var id: Long? = null
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY) var id: Long? = null
 )
